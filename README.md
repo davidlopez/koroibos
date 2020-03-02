@@ -19,6 +19,9 @@ cd koroibos
 bundle install
 
 rails db:create; rails db:migrate
+
+# IMPORTS DATA INTO DB
+rake add_data:csv_to_db
 ```
 
 #### Schema
