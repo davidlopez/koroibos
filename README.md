@@ -42,7 +42,7 @@ Development:
 http://localhost:3000/api/v1/
 
 Production:
-https://desolate-fjord-29708.herokuapp.com//api/v1/
+https://desolate-fjord-29708.herokuapp.com/api/v1/
 ```
 
 * `GET /olympians`
