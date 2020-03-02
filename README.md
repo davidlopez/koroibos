@@ -23,7 +23,7 @@ rails db:create; rails db:migrate
 
 #### Schema
 
-![Schema](https://user-images.githubusercontent.com/43835133/75695494-0b2a4b80-5ca2-11ea-8abe-7d09950aca0d.png)
+![Schema](https://user-images.githubusercontent.com/43835133/75699043-a8d44980-5ca7-11ea-9167-322f7fc307a9.png)
 
 ## Running Tests
 

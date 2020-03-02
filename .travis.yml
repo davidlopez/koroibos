@@ -8,10 +8,10 @@ services:
 - postgresql
 before_install: gem install bundler -v 2.0.2
 before_script:
-- psql -c 'create database travis_ci_test;' -U postgres
+- psql -c 'create database koroibos_test;' -U postgres
 test:
   adapter: postgresql
-  database: travis_ci_test
+  database: koroibos_test
 deploy:
   provider: heroku
   api_key:
