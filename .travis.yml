@@ -1,0 +1,21 @@
+language: ruby
+script:
+- bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rspec
+rvm:
+- 2.5.0
+services:
+- postgresql
+before_install: gem install bundler -v 2.0.2
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+test:
+  adapter: postgresql
+  database: travis_ci_test
+deploy:
+  provider: heroku
+  api_key:
+    secure: XzlhswjjFkL+JkaWjlAuIAhwRxzPp/xQqwiliFcAP1s7Qywmwz2Sy98EhFe34QZOb3lnvMm9QNNh0UU8ScigwNWVEHKt7uQlVw77jB2WJJ8tjCZpkOTo5ppfUFcYeoD8bm4Sq4TleFKu8ejKifGJCcqB3rcOg7A+QpX28DIwdnFBhMs/tpDaG3NwhIHuMZgWUCQrpWbAVDvY1B+bSKRuv5BOANX/HDQhhEnz4QUe+dB8hCa88ByO+fKE3aF71PyDhLegosnWz1IFJ/a62gba0FwTv3RJnAcscxtl/bBiV4yzqwxHRReTdwcBCRzaoH+k3IcYxXYI9xj5RFyZV8Spks6Y7EeAY3NJ0dXgtymLLGxeSieCkhMGs/kozKhPkU1gtFZX1jjx8KQLyJkPq21Uh3T03u/eliPWhyquCJG+nswBW7YjzMKlOnovWO4Epc1jESuAgTE3b3uFFyFWT5OXn7WWwgL0pt0RvNuZsj3ZgTAB0flrHo5sDeuPLwIuLDZA7cogKrqbQuAdJUYj+quj/HUdBgGF4n37xSLWq6v1Ab9p/s2Z7uv6XD8YL5NQpuqfNkOdxwCKx+GKuKOk9+LiMGVXQjskfveHrT2fOKf831LOp5xXoXKRMMtuImIgHOzmlJLLajFjSpQYREpdHYWqrl5g+wng267VXlAVlNC/o1o=
+  app: desolate-fjord-29708
+  on:
+    repo: Not-Zorro/koroibos
