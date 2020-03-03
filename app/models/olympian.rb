@@ -30,4 +30,8 @@ class Olympian < ApplicationRecord
   def self.average_age
     average(:age).round(1).to_f
   end
+
+  def medal(event_id)
+    olympian_events.find_by(event_id: event_id).medal
+  end
 end
