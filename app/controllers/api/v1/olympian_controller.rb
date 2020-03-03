@@ -3,6 +3,10 @@ class Api::V1::OlympianController < ApplicationController
     params[:age] ? olympian_age : all_olympians
   end
 
+  def show
+    render json: OlympianStatsWrapper.new
+  end
+
   private
 
     def all_olympians
