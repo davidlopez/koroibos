@@ -22,4 +22,12 @@ class Olympian < ApplicationRecord
   def sport_name
     sport.name
   end
+
+  def self.age_by_sex(sex)
+    where(sex: sex).average(:weight).round(1).to_f
+  end
+
+  def self.average_age
+    average(:age).round(1).to_f
+  end
 end
