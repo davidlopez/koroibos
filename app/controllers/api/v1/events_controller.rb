@@ -1,6 +1,6 @@
 class Api::V1::EventsController < ApplicationController
   def index
-    render json: SportCollection.new(Sport.all)
+    render json: SportCollection.new(Sport.order(:name))
   end
 
   def show
