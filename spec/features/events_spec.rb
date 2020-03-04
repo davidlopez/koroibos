@@ -19,15 +19,15 @@ describe "api/v1/events Endpoint", :type => :request do
     get "/api/v1/events"
     events = JSON.parse(response.body)
 
-    expect(events["events"][0]["sport"]).to eq(sport.name)
-    expect(events["events"][0]["events"].include?(event.name)).to be_truthy
-    expect(events["events"][0]["events"].include?(event_1.name)).to be_truthy
-    expect(events["events"][0]["events"].include?(event_2.name)).to be_truthy
+    expect(events["events"][1]["sport"]).to eq(sport.name)
+    expect(events["events"][1]["events"].include?(event.name)).to be_truthy
+    expect(events["events"][1]["events"].include?(event_1.name)).to be_truthy
+    expect(events["events"][1]["events"].include?(event_2.name)).to be_truthy
 
-    expect(events["events"][1]["sport"]).to eq(sport_2.name)
-    expect(events["events"][1]["events"].include?(event_3.name)).to be_truthy
-    expect(events["events"][1]["events"].include?(event_4.name)).to be_truthy
-    expect(events["events"][1]["events"].include?(event_5.name)).to be_truthy
+    expect(events["events"][0]["sport"]).to eq(sport_2.name)
+    expect(events["events"][0]["events"].include?(event_3.name)).to be_truthy
+    expect(events["events"][0]["events"].include?(event_4.name)).to be_truthy
+    expect(events["events"][0]["events"].include?(event_5.name)).to be_truthy
   end
 
   it "shows medalists for specific event" do
